@@ -12,12 +12,12 @@ jobs:
       - name: print event
         run: echo "nothing"
 
-  deploy_pricing:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-        - name: Deploy pricing
-          run: echo "Deploying pricing..."
+  deploy-pricing:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy pricing
+        run: echo "Deploying pricing..."
   deploy-promo:
     needs: build
     runs-on: ubuntu-latest
@@ -36,6 +36,17 @@ jobs:
         run: echo "no sku   "
   deploy-roland:
     needs: deploy-promo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: print event
+        run: echo "nothing going on"
+  deploy-oki:
+    needs: 
+      - deploy-pricing
+      - deploy-sku
+      - deploy-roland
     runs-on: ubuntu-latest
     steps:
       - name: Get code
