@@ -44,7 +44,7 @@ jobs:
         run: echo "nothing going on"
   deploy-oki:
     needs: 
-      - deploy-pricing
+      
       - deploy-sku
       - deploy-roland
     runs-on: ubuntu-latest
