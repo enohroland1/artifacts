@@ -46,6 +46,7 @@ jobs:
     needs: 
       - deploy-pricing
       - deploy-roland
+      - deploy-sku
     runs-on: ubuntu-latest
     steps:
       - name: Get code
