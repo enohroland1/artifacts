@@ -34,3 +34,11 @@ jobs:
         uses: actions/checkout@v3
       - name: print event
         run: echo "no sku   "
+  deploy-roland:
+    needs: deploy-promo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: print event
+        run: echo "nothing going on"
