@@ -35,7 +35,9 @@ jobs:
       - name: print event
         run: echo "no sku   "
   deploy-roland:
-    needs: deploy-promo
+    needs:
+      - deploy-promo
+      - deploy-sku
     runs-on: ubuntu-latest
     steps:
       - name: Get code
