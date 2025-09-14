@@ -39,5 +39,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy
-        run: echo "Deploying..."
+      - name: download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+        
+      - name: see contents
+        run: ls
+      - name: Deploy to GitHub Pages
+        run: echo "Deploying to GitHub Pages..."
